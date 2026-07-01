@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Night Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:
+    radial-gradient(circle,#14213d,#000814);
+    color:white;
+}
+
+
+/* ดาว */
+
+.star{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:white;
+    border-radius:50%;
+    animation:float 6s linear infinite;
+    cursor:pointer;
+}
+
+
+@keyframes float{
+
+0%{
+transform:translateY(-20vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(120vh);
+opacity:0;
+}
+
+}
+
+
+
+.container{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+width:700px;
+
+padding:30px;
+
+background:rgba(0,0,0,.55);
+
+border:2px solid #6ecbff;
+
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 30px #0077ff;
+
+text-align:center;
+
+z-index:10;
+
+}
+
+
+
+h1{
+
+color:#8ed8ff;
+
+text-shadow:0 0 15px #00aaff;
+
+}
+
+
+
+.profile{
+
+display:flex;
+gap:20px;
+justify-content:center;
+align-items:center;
+
+margin:20px;
+
+}
+
+
+
+.profile img{
+
+width:180px;
+height:220px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:3px solid #8ed8ff;
+
+box-shadow:0 0 20px #009dff;
+
+}
+
+
+
+.info{
+
+text-align:left;
+
+font-size:18px;
+
+}
+
+
+
+button{
+
+margin-top:15px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:20px;
+
+background:#00aaff;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 0 15px #00aaff;
+
+}
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+margin-top:20px;
+
+}
+
+
+
+.tiktok{
+
+display:inline-block;
+
+margin-top:20px;
+
+color:#ff7ce5;
+
+text-decoration:none;
+
+font-size:20px;
+
+}
+
+
+
+/* hamster */
+
+.hamster{
+
+position:absolute;
+
+bottom:20px;
+right:30px;
+
+font-size:70px;
+
+animation:ham 2s infinite;
+
+}
+
+
+
+@keyframes ham{
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+
+
+.moon{
+
+position:absolute;
+
+top:30px;
+right:50px;
+
+font-size:80px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="moon">🌙</div>
+
+
+<div class="container">
+
+
+<h1>🌌 Night Portfolio 🌌</h1>
+
+
+<div class="profile">
+
+
+<img width="1005" height="1505" alt="c72026ef-c448-491b-b15a-18a745c0ba0f" src="https://github.com/user-attachments/assets/2a7556cd-c15a-4770-8792-1a503d8a612d" />
+
+
+<div class="info">
+
+<p>✨ ชื่อ : วรรัญยา ครองสุข</p>
+
+<p>✨ อายุ : 17 ปี</p>
+
+<p>✨ ตำแหน่ง : นักเรียน</p>
+
+<p>✨ OC : Haru 🐹</p>
+
+<p>✨ ชอบ : วาดรูป เกม เพลง ขนม</p>
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="showInfo()">
+⭐ ดูข้อมูลเพิ่มเติม
+</button>
+
+
+<div class="hidden" id="more">
+
+<p>
+คนที่ชอบอยู่ในโลกกลางคืน
+ฟังเพลง วาดรูป และดูแฮมสเตอร์เดินเล่น 🐹
+</p>
+
+
+<img width="1254" height="1254" alt="ChatGPT Image Jul 1, 2026, 01_16_35 PM" src="https://github.com/user-attachments/assets/ee53ae31-cf31-4e74-b7ef-d829026609b4"/>
+</div>
+
+
+
+<br>
+
+
+<a class="tiktok"
+href="https://www.tiktok.com/@lunar.blue3?is_from_webapp=1&sender_device=pc"
+target="_blank">
+
+🎵 TikTok ของฉัน
+
+</a>
+
+
+
+</div>
+
+
+
+<div class="hamster">
+🐹
+</div>
+
+
+
+
+<script>
+
+
+function showInfo(){
+
+let box=document.getElementById("more");
+
+box.style.display=
+box.style.display=="block"
+?"none"
+:"block";
+
+}
+
+
+
+// สร้างดาว
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=
+(Math.random()*5+3)+"s";
+
+
+star.style.animationDelay=
+Math.random()*5+"s";
+
+
+star.onclick=function(){
+
+this.style.background="#00ffff";
+
+this.style.boxShadow=
+"0 0 20px cyan";
+
+}
+
+
+document.body.appendChild(star);
+
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
